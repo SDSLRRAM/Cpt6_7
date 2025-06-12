@@ -37,3 +37,9 @@
 
 - 배열 인덱스는 문자열 속성으로 저장됨 ("0", "1") 그 후 인덱스 "2"에 새 요소 추가
 - `hasOwnProperty(prop)`는 주어진 키가 상속(prototype)이 아닌 인스턴스 자체에 존재하는지를 확인하는 메서드
+
+### 6-8: toString() 메서드와 오버라이딩 동작
+
+- 배열 `arr = [1, 2]`는 기본적으로 `Array.prototype.toString()`을 상속받아 동작
+- 만약 `Object.prototype.toString.call(arr)` 사용 시, 내부 `[[Class]]`를 확인
+- 이후 인스턴스에서 `toString()`을 오버라이딩을 진행
