@@ -17,3 +17,9 @@
 - 자바스크립트 배열은 내부적으로 `Array` 생성자에 의해 만들어짐
 - `arr.constructor`는 `Array`를 의미함 즉, `arr.constructor === Array` → `true` 임임
 - 따라서 이와 같은 방식으로 생성자 공유를 통한 인스턴스 생성이 가능함
+
+### 6-4: constructor 변경과 instanceof 판별
+
+- 다양한 데이터 타입(Number, String, Array, Function 등)을 가진 배열 `dataTypes`를 구성
+- 각 요소의 `.constructor` 속성을 임의로 `NewConstructor`로 변경
+- .constructor는 단순히 참조용 프로퍼티일 뿐이며, constructor를 변경해도 인스턴스의 실제 생성자와는 무관
