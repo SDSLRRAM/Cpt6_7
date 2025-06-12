@@ -86,3 +86,9 @@
 - `Rectangle(width, height)`는 사각형 객체를 생성하고, `getArea()` 메서드는 너비와 높이의 곱을 반환
 - `Square(width)`는 정사각형을 생성하고, `getArea()` 메서드는 `width * width` 형태로 재정의
 - 이때, 두 생성자는 서로 독립적인 구조이며, 각자의 prototype.getArea() 메서드를 가지고 있음
+
+### 7-6: 정사각형의 width와 height 동시 설정
+
+- `Square(width)` 에서 `this.height = width`로 설정함으로써, 정사각형은 가로와 세로 길이가 같은 특성을 가지도록 구현
+- `Square.prototype.getArea()`는 `width * height`로,`Rectangle`과 같은 로직이지만 별도로 정의되어 있음
+- Square와 Rectangle이 구조와 메서드를 중복 정의하고 있음
