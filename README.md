@@ -62,3 +62,9 @@
 - `getArea()`는 `Rectangle.prototype`에 정의되어, 모든 인스턴스가 공유하는 인스턴스 메서드
 - `isRectangle()`은 `Rectangle` 생성자 함수에 직접 붙인 정적 메서드
 - `rect1.isRectangle(...)` 은 오류 발생--> isRectangle은 인스턴스가 아닌 Rectangle 생성자에만  정의되어 있기 때문에
+
+### 7-2: 유사 배열 객체에 배열 프로토타입을 연결
+
+- `Grade()`는 `arguments`를 반복하며며 `this[0]`, `this[1]`, ... 와 같이 속성을 설정
+- `this.length`도 명시적으로 설정해 유사 배열(array-like) 형태 완성
+- 생성자 함수의 프로토타입을 빈 배열로 설정함으로써, Grade 인스턴스가 Array.prototype 메서드(push, join 등)를 사용할 수 있음
