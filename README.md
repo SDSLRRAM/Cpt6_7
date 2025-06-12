@@ -11,3 +11,9 @@
 - `method1()`과 `property1`은 `Constructor.prototype`에 정의되어 모든 인스턴스가 공유함
 - `console.dir(Constructor)`: 생성자 함수 자체의 구조 출력
 - `console.dir(instance)`: 인스턴스가 `[[Prototype]]`을 통해 `Constructor.prototype`에 접근하는 구조를 확인 가능
+
+### 6-3: 배열의 constructor를 통한 새로운 배열 생성
+
+- 자바스크립트 배열은 내부적으로 `Array` 생성자에 의해 만들어짐
+- `arr.constructor`는 `Array`를 의미함 즉, `arr.constructor === Array` → `true` 임임
+- 따라서 이와 같은 방식으로 생성자 공유를 통한 인스턴스 생성이 가능함
