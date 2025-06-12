@@ -98,3 +98,8 @@
 - `Rectangle.call(this, width, width)`을 통해 Square 인스턴스가 Rectangle의 생성자 로직을 재사용
 - `Square.prototype = new Rectangle()`을 통해 Rectangle의 메서드(getArea 등)를 상속받는 프로토타입 체인 완성
 - call()로 생성자 재사용, constructor 속성은 덮어씌워졌기 때문에 다음 단계에서는 constructor 복원 필요
+
+### 7-8: 헬퍼 함수 extendClass1을 통한 상속 구현
+
+- `extendClass1(SuperClass, SubClass, subMethods)` 함수를 통해 클래스 상속 구조를 구현현
+- SubClass의 prototype을 SuperClass 인스턴스로 초기화, 기존 prototype 속성 삭제 후, subMethods 덮어쓰기 진행
