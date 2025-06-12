@@ -43,3 +43,9 @@
 - 배열 `arr = [1, 2]`는 기본적으로 `Array.prototype.toString()`을 상속받아 동작
 - 만약 `Object.prototype.toString.call(arr)` 사용 시, 내부 `[[Class]]`를 확인
 - 이후 인스턴스에서 `toString()`을 오버라이딩을 진행
+
+### 6-9: Object.prototype.getEntries() 구현
+
+- 모든 객체에 공통적으로 사용할 수 있는 유틸리티 함수 `getEntries()`를 `Object.prototype`에 직접 정의
+- `for...in` 루프와 `hasOwnProperty()`를 조합하여 해당 객체의 직접 속성만 추출
+- 각 속성은 `[key, value]` 형태의 배열로 구성되어 `.push()`됨
