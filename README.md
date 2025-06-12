@@ -4,7 +4,6 @@
 - `this._name`은 인스턴스 고유의 속성으로 설정됨
 - `Person.prototype.getName`을 통해 모든 인스턴스가 공유하는 메서드를 정의
 
-
 ### 6-2: 생성자 함수와 인스턴스의 프로토타입 구조
 
 - `Constructor`는 이름을 인자로 받는 생성자 함수
@@ -23,3 +22,8 @@
 - 다양한 데이터 타입(Number, String, Array, Function 등)을 가진 배열 `dataTypes`를 구성
 - 각 요소의 `.constructor` 속성을 임의로 `NewConstructor`로 변경
 - .constructor는 단순히 참조용 프로퍼티일 뿐이며, constructor를 변경해도 인스턴스의 실제 생성자와는 무관
+
+### 6-5: constructor 접근 경로를 통한 인스턴스 생성
+
+- `Person(name)` 생성자를 이용해 다양한 방식으로 인스턴스를 생성
+- 모두 결과적으로 동일한 생성자(Person)를 참조하고 있으므로, 각각의 객체는 instanceof Person 판별 시 모두 true를 출력함
