@@ -68,3 +68,10 @@
 - `Grade()`는 `arguments`를 반복하며며 `this[0]`, `this[1]`, ... 와 같이 속성을 설정
 - `this.length`도 명시적으로 설정해 유사 배열(array-like) 형태 완성
 - 생성자 함수의 프로토타입을 빈 배열로 설정함으로써, Grade 인스턴스가 Array.prototype 메서드(push, join 등)를 사용할 수 있음
+
+### 7-3: 배열 메서드와 length 속성의 관계
+
+- `Grade()`는 유사 배열 객체를 생성하고, `Grade.prototype = []` 설정으로 배열 메서드 사용 가능
+- `g.push(90)` 호출 시, `this.length = 2`이므로, 인덱스 2에 `90` 추가되고 `length`는 3으로 증가
+- 이후 `delete g.length` 수행, `length` 속성이 삭제되면 `push()`는 내부적으로 `this.length || 0`을 사용하여 0부터 다시 시작
+- 따라서 다음 `g.push(70)` 호출 시, `this.length`가 없으므로 기본값 0으로 간주 → `this[0] = 70`
