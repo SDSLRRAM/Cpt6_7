@@ -56,4 +56,9 @@
 - `this[0] = ...`, `this[1] = ...` 등으로 각 인자를 프로퍼티로 저장
 - `this.length = 인자의 개수` 를 설정
 
+### 7-1: 인스턴스 메서드 vs 정적(static) 메서드
 
+- `Rectangle`은 생성자 함수로, `width`와 `height` 속성을 갖는 사각형 객체를 생성
+- `getArea()`는 `Rectangle.prototype`에 정의되어, 모든 인스턴스가 공유하는 인스턴스 메서드
+- `isRectangle()`은 `Rectangle` 생성자 함수에 직접 붙인 정적 메서드
+- `rect1.isRectangle(...)` 은 오류 발생--> isRectangle은 인스턴스가 아닌 Rectangle 생성자에만  정의되어 있기 때문에
