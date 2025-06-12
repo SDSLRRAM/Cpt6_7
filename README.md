@@ -103,3 +103,10 @@
 
 - `extendClass1(SuperClass, SubClass, subMethods)` 함수를 통해 클래스 상속 구조를 구현현
 - SubClass의 prototype을 SuperClass 인스턴스로 초기화, 기존 prototype 속성 삭제 후, subMethods 덮어쓰기 진행
+
+### 7-9: Bridge 함수 활용 프로토타입 상속
+
+- `extendClass2`는 SuperClass와 SubClass 사이에 중간 `Bridge` 생성자를 두어 상속
+- `Bridge.prototype = SuperClass.prototype` 으로 연결하고, `SubClass.prototype = new Bridge()`로 인스턴스를 생성
+- `new SuperClass()`를 직접 호출하지 않고도 프로토타입 체인 연결
+- 메모리 공유 문제 방지, 상속 안정성 확보, SuperClass 실행을 피할 수 있는 장점 존재
