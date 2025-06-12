@@ -92,3 +92,9 @@
 - `Square(width)` 에서 `this.height = width`로 설정함으로써, 정사각형은 가로와 세로 길이가 같은 특성을 가지도록 구현
 - `Square.prototype.getArea()`는 `width * height`로,`Rectangle`과 같은 로직이지만 별도로 정의되어 있음
 - Square와 Rectangle이 구조와 메서드를 중복 정의하고 있음
+
+### 7-7: Square가 Rectangle을 상속
+
+- `Rectangle.call(this, width, width)`을 통해 Square 인스턴스가 Rectangle의 생성자 로직을 재사용
+- `Square.prototype = new Rectangle()`을 통해 Rectangle의 메서드(getArea 등)를 상속받는 프로토타입 체인 완성
+- call()로 생성자 재사용, constructor 속성은 덮어씌워졌기 때문에 다음 단계에서는 constructor 복원 필요
