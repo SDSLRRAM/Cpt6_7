@@ -130,3 +130,9 @@
 - 불필요한 상위 클래스 인스턴스를 만들지 않고 상속 구현
 - constructor 복원 및 추가 메서드 정의 가능
 - `Object.freeze`로 하위 클래스의 프로토타입을 안전하게 보호가 가능
+
+### 7-13: 사용자 정의 extendClass3 함수 – Object.create 방식 상속
+
+- 상위 클래스의 프로토타입을 복제하여 하위 클래스에 연결
+- constructor 복원 및 추가 메서드 정의, Object.freeze를 통해 하위 클래스의 프로토타입 보호
+- `Object.create()`는 불필요한 인스턴스 생성을 피하면서 상속 구조를 설정함 따라서 constructor를 명확히 복원하여 디버깅에 유리
