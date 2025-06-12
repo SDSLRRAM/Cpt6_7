@@ -116,3 +116,11 @@
 - `Object.create(Rectangle.prototype)`은 `Rectangle.prototype`을 프로토타입으로 갖는 새로운 객체를 생성
 - 이후 Square.prototype에 설정함으로써 getArea()를 상속
 - 또한, Object.freeze()는 실수로 프로토타입을 수정하지 못하도록 보호
+
+### 7-11: 사용자 정의 extendClass1 함수
+
+- 상속 대상 생성자(`SuperClass`)의 프로토타입을 기반으로 하위 클래스(`SubClass`)의 프로토타입을 설정
+- 생성자 복원 및 메서드 추가, 프로토타입 동결까지 수행
+- `SubClass.prototype = new SuperClass()` --> 상위 클래스의 인스턴스를 프로토타입으로 설정 (주의: 불필요한 인스턴스 생성 발생 가능)
+- `hasOwnProperty` 를 통해 불필요한 인스턴스 속성 제거
+- `Object.freeze`로 프로토타입 수정 방지
