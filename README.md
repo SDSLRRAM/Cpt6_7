@@ -56,14 +56,14 @@
 - `this[0] = ...`, `this[1] = ...` 등으로 각 인자를 프로퍼티로 저장
 - `this.length = 인자의 개수` 를 설정
 
-### 7-1: 인스턴스 메서드 vs 정적(static) 메서드
+### 7-1: 인스턴스 메서드 vs 정적 메서드
 
 - `Rectangle`은 생성자 함수로, `width`와 `height` 속성을 갖는 사각형 객체를 생성
 - `getArea()`는 `Rectangle.prototype`에 정의되어, 모든 인스턴스가 공유하는 인스턴스 메서드
 - `isRectangle()`은 `Rectangle` 생성자 함수에 직접 붙인 정적 메서드
 - `rect1.isRectangle(...)` 은 오류 발생--> isRectangle은 인스턴스가 아닌 Rectangle 생성자에만  정의되어 있기 때문에
 
-### 7-2: 유사 배열 객체에 배열 프로토타입을 연결
+### 7-2: 유사 배열 객체에 배열 프로토타입 연결
 
 - `Grade()`는 `arguments`를 반복하며며 `this[0]`, `this[1]`, ... 와 같이 속성을 설정
 - `this.length`도 명시적으로 설정해 유사 배열(array-like) 형태 완성
@@ -80,3 +80,9 @@
 
 - `Grade.prototype = ['a', 'b', 'c', 'd']`로 설정됨 즉, `g` 인스턴스는 배열 프로토타입을 상속받으며 `length` 속성이 없을 경우 `prototype.length`를 사용하게 됨
 - g.length = 2 → push(90) → g[2] = 90, g.length = 3
+
+### 7-5: Rectangle과 Square의 생성자 및 면적 계산
+
+- `Rectangle(width, height)`는 사각형 객체를 생성하고, `getArea()` 메서드는 너비와 높이의 곱을 반환
+- `Square(width)`는 정사각형을 생성하고, `getArea()` 메서드는 `width * width` 형태로 재정의
+- 이때, 두 생성자는 서로 독립적인 구조이며, 각자의 prototype.getArea() 메서드를 가지고 있음
