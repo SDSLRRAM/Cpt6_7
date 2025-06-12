@@ -75,3 +75,8 @@
 - `g.push(90)` 호출 시, `this.length = 2`이므로, 인덱스 2에 `90` 추가되고 `length`는 3으로 증가
 - 이후 `delete g.length` 수행, `length` 속성이 삭제되면 `push()`는 내부적으로 `this.length || 0`을 사용하여 0부터 다시 시작
 - 따라서 다음 `g.push(70)` 호출 시, `this.length`가 없으므로 기본값 0으로 간주 → `this[0] = 70`
+
+### 7-4: length 속성 삭제 후 프로토타입의 length 사용 사례
+
+- `Grade.prototype = ['a', 'b', 'c', 'd']`로 설정됨 즉, `g` 인스턴스는 배열 프로토타입을 상속받으며 `length` 속성이 없을 경우 `prototype.length`를 사용하게 됨
+- g.length = 2 → push(90) → g[2] = 90, g.length = 3
