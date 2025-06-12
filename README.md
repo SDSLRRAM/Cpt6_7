@@ -124,3 +124,9 @@
 - `SubClass.prototype = new SuperClass()` --> 상위 클래스의 인스턴스를 프로토타입으로 설정 (주의: 불필요한 인스턴스 생성 발생 가능)
 - `hasOwnProperty` 를 통해 불필요한 인스턴스 속성 제거
 - `Object.freeze`로 프로토타입 수정 방지
+
+### 7-12: parasitic combination inheritance 구현
+
+- 불필요한 상위 클래스 인스턴스를 만들지 않고 상속 구현
+- constructor 복원 및 추가 메서드 정의 가능
+- `Object.freeze`로 하위 클래스의 프로토타입을 안전하게 보호가 가능
