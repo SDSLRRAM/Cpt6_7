@@ -110,3 +110,9 @@
 - `Bridge.prototype = SuperClass.prototype` 으로 연결하고, `SubClass.prototype = new Bridge()`로 인스턴스를 생성
 - `new SuperClass()`를 직접 호출하지 않고도 프로토타입 체인 연결
 - 메모리 공유 문제 방지, 상속 안정성 확보, SuperClass 실행을 피할 수 있는 장점 존재
+
+### 7-10: Object.create를 이용한 프로토타입 상속
+
+- `Object.create(Rectangle.prototype)`은 `Rectangle.prototype`을 프로토타입으로 갖는 새로운 객체를 생성
+- 이후 Square.prototype에 설정함으로써 getArea()를 상속
+- 또한, Object.freeze()는 실수로 프로토타입을 수정하지 못하도록 보호
